@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:id="@+id/mian"
+    android:orientation="vertical"
+    tools:context="com.coderstory.mytools.MainActivity">
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/recovery"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/buttonstyle"
+        android:text="@string/EnterRecovery"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/fastboot"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/EnterFastboot"
+        android:background="@drawable/buttonstyle"
+        android:layout_above="@+id/hotboot"
+        android:layout_alignRight="@+id/exit"
+        android:layout_alignEnd="@+id/exit" />
+
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/hotboot"
+        android:layout_width="wrap_content"
+        android:background="@drawable/buttonstyle"
+        android:layout_height="wrap_content"
+        android:text="@string/QuickRestart"
+
+        android:layout_below="@+id/recovery"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="29dp"
+        android:layout_alignEnd="@+id/recovery" />
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/reboot"
+        android:background="@drawable/buttonstyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Reboot"
+
+        android:layout_alignTop="@+id/hotboot"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/fastboot" />
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/shutdown"
+        android:background="@drawable/buttonstyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Shutdown"
+        android:layout_below="@+id/hotboot"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="29dp"
+        android:layout_alignEnd="@+id/hotboot" />
+
+    <Button
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Exit"
+        android:id="@+id/exit"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/buttonstyle"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/DisableAppBtn"
+        android:background="@drawable/buttonstyle"
+        android:id="@+id/Disable_App_Btn"
+        android:layout_below="@+id/shutdown"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="41dp"
+        android:layout_alignEnd="@+id/shutdown" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/managerapp"
+        android:id="@+id/ManagerApp"
+        android:background="@drawable/buttonstyle"
+        android:layout_alignTop="@+id/shutdown"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/reboot" />
+
+    <Button
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about"
+        android:background="@drawable/buttonstyle"
+        android:id="@+id/about"
+        android:layout_alignTop="@+id/Disable_App_Btn"
+        android:layout_alignStart="@+id/ManagerApp"
+        android:layout_alignEnd="@+id/ManagerApp" />
+
+</RelativeLayout>

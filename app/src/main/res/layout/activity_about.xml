@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/action_about"
+    tools:context="com.coderstory.mytools.about">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:scaleType="centerInside"
+        android:layout_marginBottom="420dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Version"
+        android:id="@+id/textView3"
+        android:layout_above="@+id/textView2"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Author油炸包子"
+        android:id="@+id/textView2"
+        android:layout_marginBottom="80dp"
+        android:layout_above="@+id/textView4"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Blogcoderstory.cn"
+        android:id="@+id/textView4"
+        android:onClick="opneUrl"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about_text"
+        android:id="@+id/textView"
+        android:layout_marginTop="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

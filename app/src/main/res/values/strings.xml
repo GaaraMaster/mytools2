@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">mini盒子</string>
+    <string name="titile">mini盒子</string>
+    <string name="action_settings">设置</string>
+    <string name="action_about">关于</string>
+    <string name="about">关于</string>
+    <string name="title_activity_settings">设置</string>
+    <string name="QuickRestart">&#160;&#160;快速重启&#160;&#160;</string>
+    <string name="EnterRecovery">  &#160;&#160;进入 Recovery &#160;&#160; </string>
+    <string name="FlashRecovery">&#160;&#160;刷 Recovery&#160;&#160;</string>
+    <string name="Exit">&#160;&#160;退出&#160;&#160;</string>
+    <string name="Shutdown">&#160;&#160;关机&#160;&#160;</string>
+    <string name="Reboot">&#160;&#160;重启&#160;&#160;</string>
+    <string name="EnterFastboot">&#160;&#160;进入 Fastboot&#160;&#160;</string>
+    <string name="Author油炸包子">作者：@油炸包子</string>
+    <string name="Blogcoderstory.cn">博客：blog.coderstory.cn</string>
+    <string name="Version">版本：v 1.1</string>
+    <string name="tips">提醒</string>
+    <string name="BtnOK">确定</string>
+    <string name="Flashingwaiting">正在刷入，请稍后...</string>
+    <string name="Btncancel">取消</string>
+    <string name="FlashOKSure">刷入成功，是否立即进入Recovery？</string>
+    <string name="RunError">执行失败</string>
+    <string name="FlashError">刷入失败！</string>
+    <string name="SureFlash">你确定要刷入此Recovery吗？</string>
+    <string name="TipsNoFile">这貌似不是镜像文件吧-_-!!</string>
+    <string name="TipsNofiles">你没选文件-_-!!</string>
+    <string name="NO_File_Manager">你尚未安装任何文件管理器 -_-!!</string>
+    <string name="Not_Image_Type">选择镜像文件</string>
+    <string name="Exit_Tips">再次按下返回键退出应用</string>
+    <string name="Sure_Exit">你确定要退出吗？</string>
+    <string name="Sure_Reboot">你确定要重启吗?</string>
+    <string name="Sure_shoutdown">你确定要关机吗?</string>
+    <string name="Sure_quickrestart">你确定要快速重启吗？(本功能需要busybox支持)</string>
+    <string name="Sure_Enter_Rec">你确定要进入Recovery吗？</string>
+    <string name="Sure_Enter_Fastboot">你确定要进入FastBoot模式吗？</string>
+    <string name="ExitTips">退出</string>
+    <string name="DisableAppBtn">&#160;&#160;冻结应用&#160;&#160;</string>
+    <string name="DisabeAppLable">冻结应用</string>
+    <string name="disableapptips">提示：点击应用名可切换冻结状态</string>
+    <string name="isloading">正在加载，请稍后。。。</string>
+    <string name="loadappinfo">正在加载应用信息。。。</string>
+    <string name="sureAntiDisable">你确定要解除 &#160;</string>
+    <string name="sureDisable">你确定要冻结&#160; </string>
+    <string name="btnUnDisable">解冻</string>
+    <string name="btnDissable">冻结</string>
+    <string name="sureDisableAfter"> &#160;吗？</string>
+    <string name="sureAntiDisableAfter"> &#160;的冻结状态吗？</string>
+    <string name="managerapp">应用管理</string>
+    <string name="tab_1">备份应用</string>
+    <string name="tab_2">还原应用</string>
+    <string name="about_text">本工具是我业务爱好制作的，包含基本的app备份还原功能以及系统应用的冻结功能,外加一个xposed模块，可以实现主题免付费，去下拉搜索，去除部分miui广告等功能.其中listview的下拉刷新功能使用了开源库:Phoenix Pull-to-Refresh</string>
+
+
+</resources>

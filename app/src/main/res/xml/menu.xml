@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/app_name" xmlns:android="http://schemas.android.com/apk/res/android"
+  >
+    <PreferenceCategory android:title="应用管理" android:key="general_settings">
+        <PreferenceScreen android:title="备份与还原" android:key="DS" android:summary="备份和还原用于的应用">
+            <intent android:targetPackage="com.coderstory.mytools" android:targetClass="com.coderstory.mytools.ManagerApp" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="冻结系统应用" android:key="disableApp" android:summary="冻结和解冻系统的应用" >
+            <intent android:targetPackage="com.coderstory.mytools" android:targetClass="com.coderstory.mytools.DisableAppActivity" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="高级电源" android:key="general_settings">
+        <PreferenceScreen android:title="进入Recovery" android:key="Recovey" android:summary="重启手机并进入恢复模式(Recovery)" />
+        <PreferenceScreen android:title="进入FastBoot" android:key="FastBoot" android:summary="重启手机并进入线刷模式(FastBoot)" />
+        <PreferenceScreen android:title="重启系统" android:key="Reboot" android:summary="重启手机的操作系统(Reboot)" />
+        <PreferenceScreen android:title="关机" android:key="Shutdown" android:summary="关闭手机电源(Shutdown)" />
+        <PreferenceScreen android:title="快速重启" android:key="HotReboot" android:summary="让手机快速重启（HotReboot）" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="软件信息" android:key="general_settings">
+        <PreferenceScreen android:title="mini盒子" android:summary="一个很无聊的小工具啦~" />
+        <PreferenceScreen android:title="版本号" android:summary="V1.0.1" />
+        <PreferenceScreen android:title="作者信息" android:summary="CoderStory编译发布于XXXX年XX月XX日" />
+        <PreferenceScreen android:title="其他说明" android:summary="版权所有翻版必究，引用请注明" />
+        <PreferenceScreen android:title="版本号" android:summary="V1.0.1" />
+        <PreferenceScreen android:title="个人博客"  android:key="blog" android:summary="http://blog.coderstory.cn" />
+
+    </PreferenceCategory>
+</PreferenceScreen>
