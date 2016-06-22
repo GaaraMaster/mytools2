@@ -23,7 +23,6 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity    {
     private  static Context mContext=null;
-    private  String  commandText="";
     private long mExitTime;
 
     @Override
@@ -31,9 +30,19 @@ public class MainActivity extends AppCompatActivity    {
         super.onCreate(savedInstanceState);
         ActivityCollector.addActivity(this);
         setContentView(R.layout.activity_main);
-        View v=this.findViewById(R.id.mian);
+      //  View v=this.findViewById(R.id.mian);
         mContext=MainActivity.this;
         Button disiableAppBtn= (Button) findViewById(R.id.Disable_App_Btn);
+
+          try {
+            Runtime.getRuntime().exec(new String[]{ "su", "-c", "echo hello" });
+        } catch (IOException e) {
+            Log.d("su", e.getMessage());
+            new AlertDialog.Builder(mContext).setTitle(R.string.RunError).setMessage(
+                    e.getMessage()).setPositiveButton(R.string.BtnOK, null).show();
+        }
+
+        assert disiableAppBtn != null;
         disiableAppBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +51,7 @@ public class MainActivity extends AppCompatActivity    {
             }
         });
         Button managerApp= (Button) findViewById(R.id.ManagerApp);
+        assert managerApp != null;
         managerApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +60,7 @@ public class MainActivity extends AppCompatActivity    {
             }
         });
         Button   fastbootBtn = (Button) findViewById(R.id.fastboot);
+        assert fastbootBtn != null;
         fastbootBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,15 +68,17 @@ public class MainActivity extends AppCompatActivity    {
             }
         });
         Button recoveryBtn = (Button) findViewById(R.id.recovery);
+        assert recoveryBtn != null;
         recoveryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showTips(mContext, "re", getString(R.string.Sure_Enter_Rec));
+                showTips(mContext, "reboot recovery", getString(R.string.Sure_Enter_Rec));
 
             }
         });
         //busybox killall system_server
         Button hotRebootBtn = (Button) findViewById(R.id.hotboot);
+        assert hotRebootBtn != null;
         hotRebootBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,6 +86,7 @@ public class MainActivity extends AppCompatActivity    {
             }
         });
         Button shutdownBtn = (Button) findViewById(R.id.shutdown);
+        assert shutdownBtn != null;
         shutdownBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,6 +94,7 @@ public class MainActivity extends AppCompatActivity    {
             }
         });
         Button rebootBtn = (Button) findViewById(R.id.reboot);
+        assert rebootBtn != null;
         rebootBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,6 +103,7 @@ public class MainActivity extends AppCompatActivity    {
         });
 
         Button about= (Button) findViewById(R.id.about);
+        assert about != null;
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,6 +113,7 @@ public class MainActivity extends AppCompatActivity    {
         });
 
      Button exitBtn= (Button) findViewById(R.id.exit);
+        assert exitBtn != null;
         exitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,9 +155,8 @@ public class MainActivity extends AppCompatActivity    {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        String cmd = commandText;
                         try {
-                            Runtime.getRuntime().exec(new String[]{ "su", "-c", cmd });
+                            Runtime.getRuntime().exec(new String[]{ "su", "-c", commandText});
                         } catch (IOException e) {
                             Log.d("su", e.getMessage());
                             new AlertDialog.Builder(mContext).setTitle(R.string.RunError).setMessage(
@@ -172,9 +188,8 @@ public class MainActivity extends AppCompatActivity    {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        String cmd = commandText;
                         try {
-                            Runtime.getRuntime().exec(new String[]{ "su", "-c", cmd });
+                            Runtime.getRuntime().exec(new String[]{ "su", "-c", commandText});
                         } catch (IOException e) {
                             Log.d("su", e.getMessage());
                             new AlertDialog.Builder(mContext).setTitle(R.string.RunError).setMessage(
@@ -203,7 +218,6 @@ public class MainActivity extends AppCompatActivity    {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if ((System.currentTimeMillis() - mExitTime) > 2000) {
-                Object mHelperUtils;
                 Toast.makeText(this, R.string.Exit_Tips, Toast.LENGTH_SHORT).show();
                 mExitTime = System.currentTimeMillis();
             } else {

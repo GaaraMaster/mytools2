@@ -134,7 +134,6 @@ public class BackupApp extends Fragment {
                             process = Runtime.getRuntime().exec("su"); //切换到root帐号
                             os = new DataOutputStream(process.getOutputStream());
                             os.writeBytes(cmd + "\n");
-
                             os.writeBytes("exit\n");
                             os.flush();
                             process.waitFor();

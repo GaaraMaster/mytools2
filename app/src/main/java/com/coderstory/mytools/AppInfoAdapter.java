@@ -18,12 +18,11 @@ import java.util.List;
  */
 public class AppInfoAdapter extends ArrayAdapter {
     private int resourceId;
-    private int disableColor;
+
     public AppInfoAdapter(Context context, int textViewResourceId, int disable, List<AppInfo> objects)
     {
         super(context,textViewResourceId,objects);
         resourceId=textViewResourceId;
-        disableColor=disable;
     }
    @Override
     public View getView (int position ,View convertView,ViewGroup parent)
@@ -37,7 +36,7 @@ public class AppInfoAdapter extends ArrayAdapter {
        imageView.setImageDrawable(appInfo.getImageId());
        textView.setText(" 应用名 : "+appInfo.getName()+"\r\n 版本号 : "+appInfo.getVersion());
        if(appInfo.getDisable()){
-           view.setBackgroundColor(Color.parseColor("#b337ae60")); //冻结的颜色
+           view.setBackgroundColor(Color.parseColor("#d0d7d7d7")); //冻结的颜色
        }
        return  view;
    }

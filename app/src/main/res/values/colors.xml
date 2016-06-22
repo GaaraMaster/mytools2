@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#5ca1fa</color>
-    <color name="colorPrimaryDark">#5ca1fa</color>
-    <color name="colorAccent">#5ca1fa</color>
-    <color name="colorItem">#b32788fd</color>
-    <color name="enableApp">#0f87ce</color>
+    <color name="colorPrimary">#27b6d2</color>
+    <color name="colorPrimaryDark">#27b6d2</color>
+    <color name="colorAccent">#d027b6d2</color>
+    <color name="colorItem">#d027b6d2</color>
+    <color name="enableApp">#d027b6d2</color>
     <color name="disableApp">#b337ae60</color>
     <color name="divider">#00f7f7f7</color>
-    <color name="btn">#b32788fd</color>
+    <color name="btn">#d027b6d2</color>
     <color name="background_tab_pressed">#6633B5E5</color>
     <color name="tableColor">#e9026a9e</color>
 </resources>

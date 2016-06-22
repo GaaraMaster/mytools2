@@ -17,9 +17,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by cc on 2015/12/25.
- */
+
 public class TabFragments extends Fragment implements ViewPager.OnPageChangeListener,
         TabHost.OnTabChangeListener {
 
@@ -28,7 +26,6 @@ public class TabFragments extends Fragment implements ViewPager.OnPageChangeList
     private TabHost tabHost;
     private int currentTab = TAB_LOGIN;
     private ViewPager viewPager;
-    private TabFragmentPageAdapter pageAdapter;
     private List<Fragment> fragments;
 
     @Override
@@ -38,7 +35,7 @@ public class TabFragments extends Fragment implements ViewPager.OnPageChangeList
         tabHost = (TabHost) rootView.findViewById(android.R.id.tabhost);
         viewPager = (ViewPager) rootView.findViewById(R.id.viewpager);
         viewPager.setOnPageChangeListener(this);
-        fragments = new ArrayList<Fragment>();
+        fragments = new ArrayList<>();
         fragments.add(new BackupApp());
         fragments.add(new restoreApp());
         return rootView;
@@ -48,7 +45,7 @@ public class TabFragments extends Fragment implements ViewPager.OnPageChangeList
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setRetainInstance(true);
-        pageAdapter = new TabFragmentPageAdapter(getChildFragmentManager(),
+        TabFragmentPageAdapter pageAdapter = new TabFragmentPageAdapter(getChildFragmentManager(),
                 fragments, getArguments());
         pageAdapter.notifyDataSetChanged();
         viewPager.setAdapter(pageAdapter);
@@ -80,16 +77,12 @@ public class TabFragments extends Fragment implements ViewPager.OnPageChangeList
 
             } else {
 
-                if (view != null) {
-                    // reduce height of the tab
-                    view.getLayoutParams().height *= 0.77;
+                // reduce height of the tab
+                view.getLayoutParams().height *= 0.77;
 
-                    if (textView instanceof TextView) {
-                        ((TextView) textView).setGravity(Gravity.CENTER);
-                        textView.getLayoutParams().height =  ViewGroup.LayoutParams.MATCH_PARENT;
-                        textView.getLayoutParams().width = ViewGroup.LayoutParams.WRAP_CONTENT;
-                    }
-                }
+                ((TextView) textView).setGravity(Gravity.CENTER);
+                textView.getLayoutParams().height =  ViewGroup.LayoutParams.MATCH_PARENT;
+                textView.getLayoutParams().width = ViewGroup.LayoutParams.WRAP_CONTENT;
             }
 
         }
@@ -116,10 +109,6 @@ public class TabFragments extends Fragment implements ViewPager.OnPageChangeList
  //选择了某个标签
     @Override
     public void onPageSelected(int position) {
-       if(position==1)
-       {
-
-       }
         tabHost.setCurrentTab(position);
     }
 

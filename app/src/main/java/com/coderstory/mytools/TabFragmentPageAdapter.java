@@ -1,8 +1,6 @@
 package com.coderstory.mytools;
 
-/**
- * Created by cc on 2015/12/25.
- */
+
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

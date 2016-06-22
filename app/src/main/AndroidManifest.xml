@@ -23,7 +23,6 @@
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -33,14 +32,12 @@
             android:launchMode="singleTask" />
         <activity
             android:name=".DisableAppActivity"
-            android:theme="@style/Theme.AppCompat.Light"
             android:label="@string/DisabeAppLable"
             android:launchMode="singleTask" />
         <activity
             android:name=".ManagerApp"
             android:label="应用管理"
-            android:launchMode="singleTask"
-            android:theme="@style/Theme.AppCompat.Light"/>
+            android:launchMode="singleTask" />
 
 
 

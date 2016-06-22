@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.preference.Preference;
 
-/**
- * Created by CoderStory on 2016-05-19.
- */
+
 public class EnterBlog implements Preference.OnPreferenceClickListener{
 
     @Override

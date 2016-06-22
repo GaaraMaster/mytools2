@@ -28,19 +28,17 @@ import java.io.DataOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-;
-
 
 public class restoreApp extends Fragment {
     private View view;
-    private List<AppInfo> appInfoList = new ArrayList<AppInfo>();
+    private List<AppInfo> appInfoList = new ArrayList<>();
 
-    List<PackageInfo> packages = new ArrayList<PackageInfo>();
+    List<PackageInfo> packages = new ArrayList<>();
     AppInfoAdapter adapter = null;
     ListView listView = null;
     AppInfo appInfo = null;
-    int mposition = 0;
-    View mview = null;
+    int mPosition = 0;
+    View mView = null;
     private Context context;
     PullToRefreshView mPullToRefreshView;
 
@@ -76,11 +74,10 @@ public class restoreApp extends Fragment {
     }
 
     private void initData() {
-        appInfoList= new ArrayList<AppInfo>();
+        appInfoList= new ArrayList<>();
         PackageManager pm=  getActivity().getPackageManager();
-        boolean result = false;
         DirManager.apkAll = DirManager.GetApkFileName("/sdcard/backapp/");
-        packages=new ArrayList<PackageInfo>();
+        packages= new ArrayList<>();
         for (String item : DirManager.apkAll
                 ) {
             PackageInfo packageInfo = DirManager.loadAppInfo(item, getActivity());
@@ -102,13 +99,13 @@ public class restoreApp extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mposition = position;
-                mview = view;
+                mPosition = position;
+                mView = view;
                 AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
                 dialog.setTitle(R.string.tips);
-                String tipsText = "";
+                String tipsText;
                 String BtnText = getString(R.string.BtnOK);
-                appInfo = appInfoList.get(mposition);
+                appInfo = appInfoList.get(mPosition);
                 tipsText = "你确定要安装" + appInfo.getName() + "吗？";
                 dialog.setMessage(tipsText);
                 dialog.setPositiveButton(BtnText, new DialogInterface.OnClickListener() {
@@ -119,26 +116,26 @@ public class restoreApp extends Fragment {
                         Process process = null;
                         DataOutputStream os = null;
                         try {
-                            String cmd = commandText;
                             process = Runtime.getRuntime().exec("su"); //切换到root帐号
                             os = new DataOutputStream(process.getOutputStream());
-                            os.writeBytes(cmd + "\n");
+                            os.writeBytes(commandText + "&\n");
                             os.writeBytes("exit\n");
                             os.flush();
                             process.waitFor();
-                        } catch (Exception e) {
+                        } catch (Exception ignored) {
 
                         } finally {
                             try {
                                 if (os != null) {
                                     os.close();
                                 }
+                                assert process != null;
                                 process.destroy();
-                            } catch (Exception e) {
+                            } catch (Exception ignored) {
                             }
                         }
                         closeProgress();
-                        Toast.makeText(context, "恭喜 还原成功！", Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "正在后台安装！", Toast.LENGTH_SHORT).show();
                     }
                 });
                 dialog.setCancelable(true);
@@ -202,8 +199,6 @@ public class restoreApp extends Fragment {
             dialog = ProgressDialog.show(getActivity(), getString(R.string.tips), getString(R.string.loadappinfo));
 
             dialog.show();
-        } else {
-
         }
     }
 
@@ -214,13 +209,6 @@ public class restoreApp extends Fragment {
             dialog.cancel();
             dialog = null;
         }
-    }
-
-    public boolean isShowing() {
-        if (dialog != null) {
-            return dialog.isShowing();
-        }
-        return false;
     }
 
 }
